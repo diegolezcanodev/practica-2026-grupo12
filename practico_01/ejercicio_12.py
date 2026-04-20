@@ -14,9 +14,10 @@ precio_articulos = [100.48, 16.42, 5.20]
 
 
 def combinar_basico(nombres: List[str], precios: List[float]) -> Tuple[Any]:
+    nueva_lista = []
     for i in range(len(nombres)):
-        nombres[i] = (nombres[i], precios[i])
-    return tuple(nombres)
+        nueva_lista.append((nombres[i], precios[i]))
+    return tuple(nueva_lista)
     
 
 
@@ -38,10 +39,10 @@ id_articulos = [6852, 1459, 3578]
 
 
 def combinar_enumerate(nombres: List[str], precios: List[float], ids: List[int]) -> Tuple[Any]:
-    """Re-Escribir utilizando enumerate y agregando un nuevo componente.
-    Referencia: https://docs.python.org/3/library/functions.html#enumerate
-    """
-    pass # Completar
+    nueva_lista = []
+    for i, nombre in enumerate(nombres):
+        nueva_lista.append((nombre, precios[i], ids[i]))
+    return tuple(nueva_lista)
 
 
 # NO MODIFICAR - INICIO
@@ -62,10 +63,7 @@ id_articulos = [6852, 1459, 3578]
 
 
 def combinar_zip(nombres: List[str], precios: List[float], ids: List[int]) -> Tuple[Any]:
-    """Re-Escribir utilizando zip.
-    Referencia: https://docs.python.org/3/library/functions.html#zip
-    """
-    pass # Completar
+    return tuple(zip(nombres, precios, ids))
 
 
 # NO MODIFICAR - INICIO
@@ -88,10 +86,7 @@ importado_articulos = [True, False, True]
 
 
 def combinar_zip_args(*args) -> Tuple[Any]:
-    """Re-Escribir utilizando zip y una cantidad arbitraria de componentes.
-    Referencia: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
-    """
-    pass # Completar
+    return tuple(zip(*args))
 
 
 # NO MODIFICAR - INICIO
