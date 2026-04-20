@@ -14,12 +14,10 @@ precio_articulos = [100.48, 16.42, 5.20]
 
 
 def combinar_basico(nombres: List[str], precios: List[float]) -> Tuple[Any]:
-    """Toma dos listas y devuelve una tupla de duplas con los componentes de
-    las listas.
-
-    Restricción: Resolver utilizando un bucle for.
-    """
-    pass # Completar
+    for i in range(len(nombres)):
+        nombres[i] = (nombres[i], precios[i])
+    return tuple(nombres)
+    
 
 
 # NO MODIFICAR - INICIO

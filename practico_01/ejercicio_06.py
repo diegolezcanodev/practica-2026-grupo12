@@ -64,18 +64,14 @@ if __name__ == "__main__":
 
 
 def numeros_al_final_recursivo(lista: List[Union[float, str]]) -> List[Union[float, str]]:
-    """CHALLENGE OPCIONAL - Re-escribir de forma recursiva."""
-    def separar(sublista):
-        if not sublista:
-            return [], []
-        letras, numeros = separar(sublista[1:])
-        if isinstance(sublista[0], (int, float)):
-            return letras, [sublista[0]] + numeros
-        else:
-            return [sublista[0]] + letras, numeros
-
-    letras, numeros = separar(lista)
-    return letras + numeros
+    if not lista:
+        return []
+    primero = lista[0]
+    resto = numeros_al_final_recursivo(lista[1:])
+    if isinstance(primero, (int, float)):
+        return resto + [primero]
+    else:
+        return [primero] + resto
 
 
 # NO MODIFICAR - INICIO
