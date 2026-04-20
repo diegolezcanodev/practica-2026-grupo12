@@ -1,11 +1,9 @@
 """Tuple, Enumerate, Zip, Args.
 
-
 Contexto: Se tiene un programa que lee diferentes listas de una tabla en una
 base de datos y se quieren combinar estas listas para que luego puedan crearse
 los objetos de la capa de negocio.
 """
-
 
 from typing import Any, List, Tuple
 
@@ -18,7 +16,6 @@ def combinar_basico(nombres: List[str], precios: List[float]) -> Tuple[Any]:
     for i in range(len(nombres)):
         nueva_lista.append((nombres[i], precios[i]))
     return tuple(nueva_lista)
-    
 
 
 # NO MODIFICAR - INICIO
@@ -31,9 +28,7 @@ respuesta = (
 assert combinar_basico(nombre_articulos, precio_articulos) == respuesta
 # NO MODIFICAR - FIN
 
-
 ###############################################################################
-
 
 id_articulos = [6852, 1459, 3578]
 
@@ -55,9 +50,7 @@ respuesta = (
 assert combinar_enumerate(nombre_articulos, precio_articulos, id_articulos) == respuesta
 # NO MODIFICAR - FIN
 
-
 ###############################################################################
-
 
 id_articulos = [6852, 1459, 3578]
 
@@ -76,9 +69,7 @@ respuesta = (
 assert combinar_zip(nombre_articulos, precio_articulos, id_articulos) == respuesta
 # NO MODIFICAR - FIN
 
-
 ###############################################################################
-
 
 id_articulos = [6852, 1459, 3578]
 categoria_articulos = ["hogar", "libreria", "perfumeria"]

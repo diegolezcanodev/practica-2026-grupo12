@@ -18,7 +18,6 @@ def numeros_al_final_basico(lista: List[Union[float, str]]) -> List[Union[float,
 assert numeros_al_final_basico([3, "a", 1, "b", 10, "j"]) == ["a", "b", "j", 3, 1, 10]
 # NO MODIFICAR - FIN
 
-
 ###############################################################################
 
 
@@ -27,10 +26,10 @@ def numeros_al_final_comprension(lista: List[Union[float, str]]) -> List[Union[f
     no_numeros = [x for x in lista if not isinstance(x, (int, float))]
     return no_numeros + numeros
 
+
 # NO MODIFICAR - INICIO
 assert numeros_al_final_comprension([3, "a", 1, "b", 10, "j"]) == ["a", "b", "j", 3, 1, 10]
 # NO MODIFICAR - FIN
-
 
 ###############################################################################
 
@@ -42,7 +41,6 @@ def numeros_al_final_sorted(lista: List[Union[float, str]]) -> List[Union[float,
 # NO MODIFICAR - INICIO
 assert numeros_al_final_sorted([3, "a", 1, "b", 10, "j"]) == ["a", "b", "j", 3, 1, 10]
 # NO MODIFICAR - FIN
-
 
 ###############################################################################
 
@@ -57,8 +55,9 @@ def numeros_al_final_filter(lista: List[Union[float, str]]) -> List[Union[float,
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":
     assert numeros_al_final_filter([3, "a", 1, "b", 10, "j"]) == ["a", "b", "j", 3, 1, 10]
-# NO MODIFICAR - FIN
 
+
+# NO MODIFICAR - FIN
 
 ###############################################################################
 
@@ -77,4 +76,6 @@ def numeros_al_final_recursivo(lista: List[Union[float, str]]) -> List[Union[flo
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":
     assert numeros_al_final_recursivo([3, "a", 1, "b", 10, "j"]) == ["a", "b", "j", 3, 1, 10]
+
+
 # NO MODIFICAR - FIN

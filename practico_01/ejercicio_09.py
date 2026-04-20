@@ -17,7 +17,6 @@ assert sumatoria_basico(1) == 1
 assert sumatoria_basico(100) == 5050
 # NO MODIFICAR - FIN
 
-
 ###############################################################################
 
 
@@ -34,9 +33,7 @@ assert sumatoria_sum(1) == 1
 assert sumatoria_sum(100) == 5050
 # NO MODIFICAR - FIN
 
-
 ###############################################################################
-
 
 from functools import reduce
 
@@ -54,8 +51,9 @@ def sumatoria_reduce(n: int) -> int:
 if __name__ == "__main__":
     assert sumatoria_reduce(1) == 1
     assert sumatoria_reduce(100) == 5050
-# NO MODIFICAR - FIN
 
+
+# NO MODIFICAR - FIN
 
 ###############################################################################
 
@@ -71,4 +69,6 @@ def sumatoria_gauss(n: int) -> int:
 if __name__ == "__main__":
     assert sumatoria_gauss(1) == 1
     assert sumatoria_gauss(100) == 5050
+
+
 # NO MODIFICAR - FIN

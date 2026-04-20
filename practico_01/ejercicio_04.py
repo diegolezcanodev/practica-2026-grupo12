@@ -9,12 +9,12 @@ def es_vocal_if(letra: str) -> bool:
     else:
         return False
 
+
 # NO MODIFICAR - INICIO
 assert es_vocal_if("a")
 assert not es_vocal_if("b")
 assert es_vocal_if("A")
 # NO MODIFICAR - FIN
-
 
 ###############################################################################
 
@@ -32,12 +32,12 @@ assert not es_vocal_if_in("b")
 assert es_vocal_if_in("A")
 # NO MODIFICAR - FIN
 
-
 ###############################################################################
 
 
 def es_vocal_in(letra: str) -> bool:
     return letra.lower() in "aeiou"
+
 
 # NO MODIFICAR - INICIO
 assert es_vocal_in("a")
