@@ -16,7 +16,16 @@ class Article:
 
     # NO MODIFICAR - FIN
 
-    # Completar
+    def __str__(self) -> str:
+        return self.name
+
+    def __repr__(self) -> str:
+        return f"Article('{self.name}')"
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Article):
+            return False
+        return self.name == other.name
 
 
 # NO MODIFICAR - INICIO
@@ -49,7 +58,21 @@ class ShoppingCart:
 
     # NO MODIFICAR - FIN
 
-    # Completar
+    def __str__(self) -> str:
+        return str([article.name for article in self.articles])
+
+    def __repr__(self) -> str:
+        articles_repr = ", ".join(repr(a) for a in self.articles)
+        return f"ShoppingCart([{articles_repr}])"
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, ShoppingCart):
+            return False
+        return sorted(a.name for a in self.articles) == sorted(a.name for a in other.articles)
+
+    def __add__(self, other: ShoppingCart) -> ShoppingCart:
+        return ShoppingCart(self.articles + other.articles)
+
 
 
 # NO MODIFICAR - INICIO
