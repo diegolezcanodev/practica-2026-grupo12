@@ -26,7 +26,7 @@ def crear_tabla():
     conexion.close()
     print("tabla creada ")
 
-    pass # Completar
+
 
 
 def borrar_tabla():
@@ -40,9 +40,7 @@ def borrar_tabla():
 
     conexion.commit()
     conexion.close()
-    print("Tabla borrada")
-    
-    pass # Completar
+    print("Tabla borrada")  
 
 
 # NO MODIFICAR - INICIO
@@ -60,6 +58,6 @@ if __name__ == "__main__":
     
     crear_tabla()  
     
-    borrar_tabla()
+   # borrar_tabla()
     
     print("Ejercicio_01 terminado.")
