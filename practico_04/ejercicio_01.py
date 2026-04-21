@@ -56,10 +56,10 @@ def reset_tabla(func):
 
 
 if __name__ == "__main__":
-    print("Iniciando prueba de ciclo de vida de la tabla...")
+    
     
     crear_tabla()  
     
     borrar_tabla()
     
-    print("Prueba finalizada.")
+    print("Ejercicio_01 terminado.")
