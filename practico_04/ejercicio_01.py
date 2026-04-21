@@ -10,12 +10,38 @@ def crear_tabla():
         - DNI: Int()
         - Altura: Int()
     """
+
+    conexion = sqlite3.connect("tp_python.db")
+    cursor = conexion.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS Persona (
+            IdPersona INTEGER PRIMARY KEY AUTOINCREMENT,
+            Nombre CHAR(30),
+            FechaNacimiento DATE,
+            DNI INTEGER,
+            Altura INTEGER
+        )
+    """)
+    conexion.commit()
+    conexion.close()
+    print("tabla creada ")
+
     pass # Completar
 
 
 def borrar_tabla():
     """Implementar la funcion borrar_tabla, que borra la tabla creada 
     anteriormente."""
+
+    conexion = sqlite3.connect("tp_python.db")
+    cursor = conexion.cursor()
+
+    cursor.execute("DROP TABLE IF EXISTS Persona")
+
+    conexion.commit()
+    conexion.close()
+    print("Tabla borrada")
+    
     pass # Completar
 
 
@@ -27,3 +53,13 @@ def reset_tabla(func):
         borrar_tabla()
     return func_wrapper
 # NO MODIFICAR - FIN
+
+
+if __name__ == "__main__":
+    print("Iniciando prueba de ciclo de vida de la tabla...")
+    
+    crear_tabla()  
+    
+    borrar_tabla()
+    
+    print("Prueba finalizada.")
