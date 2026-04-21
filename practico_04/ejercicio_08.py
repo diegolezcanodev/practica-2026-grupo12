@@ -6,6 +6,8 @@ from practico_04.ejercicio_02 import agregar_persona
 from practico_04.ejercicio_06 import reset_tabla
 from practico_04.ejercicio_07 import agregar_peso
 
+from practico_04.ejercicio_04 import buscar_persona
+import sqlite3
 
 def listar_pesos(id_persona):
     """Implementar la funcion listar_pesos, que devuelva el historial de pesos 
@@ -30,7 +32,35 @@ def listar_pesos(id_persona):
 
     - False en caso de no cumplir con alguna validacion.
     """
-    return []
+    # buscar persona
+    if not buscar_persona(id_persona):
+        return False
+
+    conexion = sqlite3.connect("tp_python.db")
+    cursor = conexion.cursor()
+    
+    # buscar pesos ordenados por fecha
+    consulta = "SELECT Fecha, Peso FROM PersonaPeso WHERE IdPersona = ? ORDER BY Fecha ASC"
+    cursor.execute(consulta, (id_persona,))
+    
+    resultados = cursor.fetchall() 
+    
+    conexion.close()
+    
+    # formateo
+    historial = []
+    for fecha_db, peso in resultados:
+        
+        if isinstance(fecha_db, str):
+            # limpiar microsegundos
+            fecha_dt = datetime.datetime.strptime(fecha_db.split(".")[0], '%Y-%m-%d %H:%M:%S')
+            fecha_formateada = fecha_dt.strftime('%Y-%m-%d')
+        else:
+            fecha_formateada = fecha_db.strftime('%Y-%m-%d')
+            
+        historial.append((fecha_formateada, peso))
+        
+    return historial
 
 
 # NO MODIFICAR - INICIO
